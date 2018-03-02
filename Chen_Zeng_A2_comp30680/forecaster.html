@@ -1,0 +1,348 @@
+<!DOCTYPE>
+<html>
+<head>
+        <title>forecaster</title>
+        <link rel="stylesheet" type="text/css" a href="style.css">
+        
+</head>
+<body>
+        <div id="aa">
+        <h><strong>Forecaster<br>in Dublin</strong></h>
+            </div>
+<div class="ab">
+        <form action="demoform.asp" id="form">
+            <lable for="day" style="font-size: 20px;">number of days:</lable>
+            <select id="format" name="days" method="get" >
+                 <option value=""></option>
+                <option value="1"> 1</option>
+                <option value="2"> 2</option>
+                <option value="3"> 3</option>
+                <option value="4"> 4</option>
+                <option value="5"> 5</option>
+            </select>
+            <button id="btt" onclick="checkbox()" type="button">submit</button>
+            <div id="gg">Pressure: <input type="checkbox"  id="pressure" onchange="toggleCheckbox(this)">
+            Humidity: <input type="checkbox"   id="humidity" onchange="toggleCheckbox1(this)">
+           Wind speed: <input type="checkbox"  id="speed"
+                              onchange="toggleCheckbox2(this)">
+           </div>
+             </form>
+             </div>
+        
+         <div id="ii">
+        <div id="DD" >
+            <table id="ll" style="width:100%;"></table>
+             </div >
+             <div id="QQ">
+            <p3 id="demo3"></p3>
+            <p4  id="demo4"></p4>
+            <p5  id="demo5"></p5>
+             </div>
+        </div>
+
+              
+      
+      <div class="showlist">
+          <form action="">
+            <input type="radio" name="date" value="day" onclick="showinfo()"> 2016-10-18
+            <input type="radio" name="date" value="day1" onclick="showinfo1()"> 2016-10-19
+            <input type="radio" name="date" value="day2" onclick="showinfo2()"> 2016-10-20
+            <input type="radio" name="date" value="day3" onclick="showinfo3()"> 2016-10-21
+            <input type="radio" name="date" value="day4" onclick="showinfo4()">2016-10-22
+          </form>
+        </div>
+          
+        <div id="QQ"><p id="demo6"></p></div>
+           
+        <div id="map" >
+            <div id='gmap_canvas'></div>
+            <div><small><a href="http://embedgooglemaps.com">embed google map</a></small></div>
+            <div><small><a href="https://sparpedia.dk/trivago/">Trivago</a></small></div>
+            </div>
+     
+<script>
+
+var obj1;
+var xmlhttp = new XMLHttpRequest();
+var url = "Daily.json";
+
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        window.parsedObj = JSON.parse(xmlhttp.responseText);    
+        obj1 = parsedObj;
+        myFunction(parsedObj); 
+    }
+};
+
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+    
+    
+
+   //display weatherinfo function.
+function checkbox()
+    {
+        //days
+    days=document.getElementById("format").value;
+    console.log(days);
+    
+     //weather informaiton.
+    var text = "<tr><th>Description</th><th>Icon</th><th>Min_temp</th><th>Max_temp</th><th style='display:none;'>Pressure</th><th style='display:none;'>Humidity</th><th style='display:none;'>Windspeed</th></tr>";
+       for(i=0; i<days; i++){
+            console.log(obj1.list[1]);
+        var description = obj1.list[i].weather[0].description;
+        var  icon = obj1.list[i].weather[0].icon;
+        var Max_temp = obj1.list[i].temp.max;
+        var Min_temp = obj1.list[i].temp.min;
+        var pressure = obj1.list[i].pressure;
+        var  humidity = obj1.list[i].humidity;
+        var  windspeed = obj1.list[i].speed;
+           text += "<tr><td>" + description + "</td><td>" + "<img src=http://openweathermap.org/img/w/"+icon+".png>" + "</td><td>" + Min_temp + "℃" + "</td><td>" + Max_temp + "℃" +"</td><td style='display:none;'>"+pressure+"hPa"+"</td><td style='display:none;'>"+humidity+"%"+"</td><td style='display:none;'>"+windspeed+"mph"+"</td></tr>";
+             table=document.getElementById("ll");
+            table.innerHTML = text;
+       }
+       element = document.getElementById("pressure");
+        toggleCheckbox(element);
+        
+        element1 = document.getElementById("humidity");
+        toggleCheckbox1(element1);
+        
+        element2 = document.getElementById("speed");
+        toggleCheckbox2(element2);
+        
+   
+    } 
+       
+function myFunction(obj)  {
+    
+     //weather informaiton.
+    var text = "<tr><th>Description</th><th>Icon</th><th>Min_temp</th><th>Max_temp</th><th>Pressure</th><th>Humidity</th><th>Windspeed</th></tr>";
+       for(i=0; i<5; i++){
+            console.log(obj.list[1]);
+        var description = obj.list[i].weather[0].description;
+        var  icon = obj.list[i].weather[0].icon;
+        var Max_temp = obj.list[i].temp.max;
+        var Min_temp = obj.list[i].temp.min;
+        var pressure = obj.list[i].pressure;
+        var  humidity = obj.list[i].humidity;
+        var  windspeed = obj.list[i].speed;
+           text += "<tr><td>" + description + "</td><td>" + "<img src=http://openweathermap.org/img/w/"+icon+".png>" + "</td><td>" + Min_temp + "℃"+"</td><td>" + Max_temp + "℃" + "</td><td>" +pressure+"hPa"+"</td><td>"+humidity+"%"+"</td><td>"+windspeed+"mph"+"</td></tr>";
+             table=document.getElementById("ll");
+            table.innerHTML = text;
+       }
+    }
+    
+ //checkbox function.
+function toggleCheckbox(element)
+    {
+     if(element.checked)
+     {
+         var text1 = "<table>";
+    text1 +="<tr><th>Pressure</th></tr>"
+    for(i=0; i < days; i++){
+           var pressure = obj1.list[i].pressure;
+           text1 += "<tr><td> " + pressure + "hPa"+"</td></tr>";
+    }
+         
+      text1 += "</table>";
+     document.getElementById("demo3").innerHTML = text1;
+         
+        document.getElementById("demo3").style.display= "block";
+         console.log(text1);
+      
+     }
+     else{
+         document.getElementById("demo3").style.display= "none";
+     }
+ }
+    
+function toggleCheckbox1(element)
+   {
+     if(element.checked){
+         var text2 = "<table>";
+ text2 += "<tr><th>Humidity</th></tr>";
+     for(i=0; i < days; i++){
+         var  humidity = obj1.list[i].humidity;
+           text2 += "<tr><td> " + humidity +"%" +"</td></tr>";
+    }
+         text2 +="</table>";
+    document.getElementById("demo4").innerHTML = text2; 
+        document.getElementById("demo4").style.display= "block";
+      
+     }
+     else{
+         document.getElementById("demo4").style.display= "none";
+     }
+ }
+    
+function toggleCheckbox2(element)
+    {
+     if(element.checked){
+          var text3 ="<table>";
+         text3 += "<tr><th>Windspeed</th></tr>";
+    for(i=0; i < days; i++){
+         var  windspeed = obj1.list[i].speed;
+           text3 += "<tr><td> " + windspeed + "mph"+"</td></tr>";
+    }
+       text3 += "</table>";
+    document.getElementById("demo5").innerHTML = text3;
+        document.getElementById("demo5").style.display= "block";
+      
+     }
+     else{
+         document.getElementById("demo5").style.display= "none";
+     }
+ }
+    
+</script>
+        
+<script>
+    var xmlhttp1 = new XMLHttpRequest();
+        var url1 = "Detailed.json";
+
+xmlhttp1.onreadystatechange = function() {
+    if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200) {
+        window.parsedObj = JSON.parse(xmlhttp1.responseText);    
+        obj2= parsedObj;
+        myFunction1(parsedObj); 
+    }
+};
+
+xmlhttp1.open("GET", url1, true);
+xmlhttp1.send();
+
+    var day1 ="";
+    var day2 ="";
+    var day3 ="";
+    var day4 ="";
+    var day5 ="";
+    
+ function showinfo(){
+
+    document.getElementById("demo6").innerHTML = day1;
+    infowindow = google.maps.InfoWindow({content:'<strong><img src=http://openweathermap.org/img/w/01d.png></strong><br>Dublin, Ireland<br>'});
+}
+    
+function showinfo1(){
+        
+        document.getElementById("demo6").innerHTML = day2;
+    }
+    
+function showinfo2(){
+        
+        document.getElementById("demo6").innerHTML = day3;
+    }
+    
+function showinfo3(){
+        
+        document.getElementById("demo6").innerHTML = day4;
+    }
+ 
+function showinfo4(){
+        
+        document.getElementById("demo6").innerHTML = day5;
+    }
+     
+function myFunction1(obj) {
+    
+    var list=obj.list;
+    
+    //10.19 information.
+     day1 = "<table>";
+      day1 += "<tr><th>Time</th><th>Temperature</th><th>Description</th><th>Icon</th><th>Pressure</th><th>Humidity</th><th>Windspeed</th><th>Cloud</th></tr>";
+    for (i=0; i <=[4]; i++){
+        var temperature = list[i].main.temp;
+        var pressure = list[i].main.pressure;
+        var humidity = list[i].main.humidity;
+        var description = list[i].weather[0].description;
+        var icon = list[i].weather[0].icon;
+        var windspeed = list[i].wind.speed;
+        var cloud = list[i].clouds.all;
+        var time = list[i].dt_txt;
+        day1 += "<tr><td>" + time + "</td><td>" + temperature+"℃" +"</td><td>" + description +"</td><td>" + "<img src=http://openweathermap.org/img/w/"+icon+".png>" +"</td><td>" + pressure+"hPa" +"</td><td>" + humidity+"%" +"</td><td>" + windspeed+"mph" +"</td><td>" + cloud+"%" +"</td></th>";
+        
+    }
+          day1 += "</table>";
+    
+    //10.19 information.
+    day2 = "<table>";
+      day2 += "<tr><th>Time</th><th>Temperature</th><th>Description</th><th>Icon</th><th>Pressure</th><th>Humidity</th><th>Windspeed</th><th>Cloud</th></tr>";
+    for (i=5; i <=[12]; i++){
+        var temperature = list[i].main.temp;
+        var pressure = list[i].main.pressure;
+        var humidity = list[i].main.humidity;
+        var description = list[i].weather[0].description;
+        var icon = list[i].weather[0].icon;
+        var windspeed = list[i].wind.speed;
+        var cloud = list[i].clouds.all;
+        var time = list[i].dt_txt;
+            day2 += "<tr><td>" + time + "</td><td>" + temperature+ "℃" +"</td><td>" + description +"</td><td>" + "<img src=http://openweathermap.org/img/w/"+icon+".png>" +"</td><td>" + pressure+ "hPa" +"</td><td>" + humidity+ "%" +"</td><td>" + windspeed+ "mph" +"</td><td>" + cloud+ "%" +"</td></th>";
+        
+    }
+        day2 += "</table>";
+    
+    //10.20 information.
+     day3 = "<table>";
+      day3 += "<tr><th>Time</th><th>Temperature</th><th>Description</th><th>Icon</th><th>Pressure</th><th>Humidity</th><th>Windspeed</th><th>Cloud</th></tr>";
+    for (i=13; i <=[20]; i++){
+        var temperature = list[i].main.temp;
+        var pressure = list[i].main.pressure;
+        var humidity = list[i].main.humidity;
+        var description = list[i].weather[0].description;
+        var icon = list[i].weather[0].icon;
+        var windspeed = list[i].wind.speed;
+        var cloud = list[i].clouds.all;
+        var time = list[i].dt_txt;
+        day3 += "<tr><td>" + time + "</td><td>" + temperature+"℃" +"</td><td>" + description +"</td><td>" + "<img src=http://openweathermap.org/img/w/"+icon+".png>" +"</td><td>" + pressure+ "hPa" +"</td><td>" + humidity+ "%" +"</td><td>" + windspeed+"mph" +"</td><td>" + cloud+ "%" +"</td></th>";
+        
+    }
+           day3 += "</table>";
+    
+    //10.21 information.
+    day4 = "<table>";
+      day4 += "<tr><th>Time</th><th>Temperature</th><th>Description</th><th>Icon</th><th>Pressure</th><th>Humidity</th><th>Windspeed</th><th>Cloud</th></tr>";
+    for (i=21; i <=[28]; i++){
+        var temperature = list[i].main.temp;
+        var pressure = list[i].main.pressure;
+        var humidity = list[i].main.humidity;
+        var description = list[i].weather[0].description;
+        var icon = list[i].weather[0].icon;
+        var windspeed = list[i].wind.speed;
+        var cloud = list[i].clouds.all;
+        var time = list[i].dt_txt;
+        day4 += "<tr><td>" + time + "</td><td>" + temperature+"℃" +"</td><td>" + description +"</td><td>" + "<img src=http://openweathermap.org/img/w/"+icon+".png>" +"</td><td>" + pressure+"hPa" +"</td><td>" + humidity+"%" +"</td><td>" + windspeed+"mph" +"</td><td>" + cloud+"%" +"</td></th>";
+        
+    }
+         day4 += "</table>";
+    //10.22 information.
+    day5 = "<table>";
+      day5 += "<tr><th>Time</th><th>Temperature</th><th>Description</th><th>Icon</th><th>Pressure</th><th>Humidity</th><th>Windspeed</th><th>Cloud</th></tr>";
+    for (i=29; i <=[36]; i++){
+        var temperature = list[i].main.temp;
+        var pressure = list[i].main.pressure;
+        var humidity = list[i].main.humidity;
+        var description = list[i].weather[0].description;
+        var icon = list[i].weather[0].icon;
+        var windspeed = list[i].wind.speed;
+        var cloud = list[i].clouds.all;
+        var time = list[i].dt_txt;
+        day5 += "<tr><td>" + time + "</td><td>" + temperature+"℃" +"</td><td>" + description +"</td><td>" + "<img src=http://openweathermap.org/img/w/"+icon+".png>" +"</td><td>" + pressure+"hPa" +"</td><td>" + humidity+ "%" +"</td><td>" + windspeed+"mph" +"</td><td>" + cloud+"%" +"</td></th>";
+        
+    }
+          day5 += "</table>";
+    document.getElementById("demo6").innerHTML = day5;
+    
+};  
+</script>
+
+<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+    
+<script type='text/javascript'>
+            var infowindow ="";
+            //from www.embedgooglemaps.com.
+            function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(53.3498053,-6.260309699999993),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(53.3498053,-6.260309699999993)});
+                                marker.setMap(map);
+                                infowindow = new google.maps.InfoWindow({content:'<strong>2016-10-18:<img src=http://openweathermap.org/img/w/01d.png>12.57℃<br>2016-10-19<img src=http://openweathermap.org/img/w/01d.png>12.23℃<br>2016-10-20<img src=http://openweathermap.org/img/w/02d.png>12.41℃<br>2016-10-21<img src=http://openweathermap.org/img/w/10d.png>12.79℃<br>2016-10-22<img src=http://openweathermap.org/img/w/10d.png>13.26℃<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);    
+</script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+
+body {
+  
+	background-color: #fff;
+	color: #777;
+    margin: 10px 60px;
+	
+}
+
+
+h {
+    margin-top: 10px;
+    text-align: center;
+    float: left;
+    text-align: center;
+     font-family: fantasy;
+    font-size: 45px;
+    color: deepskyblue;
+    font-style: oblique;
+    
+}
+
+h1 {
+    font-family:serif;
+    font-size: 25px;
+}
+h3 {
+    font-family: serif;
+    font-size: 25px;
+    display: block;
+    position: relative;
+}
+p {
+    font-family: serif;
+	line-height: 25px;
+    text-indent: 10px;
+    color: #444;
+    font-size: 25px;
+}
+
+.wrapper {
+	margin: 0 auto;
+	padding: 0 10px;
+	width: 940px;
+    height: 250px;
+} 
+
+#aa {
+    height: 150px;
+    width: 30%;
+    margin-top:15px;
+    
+}
+
+form {
+    display: block;
+    position: relative;
+    height: 30px;
+    text-align: left;
+    margin-top: 5px;
+    padding-top: 5px;
+    float: left;
+    font-family: black;
+    font-size: 15px;
+}
+
+
+
+    table, th, td {
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+   
+}
+
+
+ th {
+    background-color:deepskyblue;
+    color: white; 
+     font-size: 20px;
+     height: 45px;
+     width: 100px;
+}
+      
+table tr:nth-child(odd) {
+    background-color: white;
+    
+}
+table tr:nth-child(even) {
+    background-color: lightgrey;
+   
+}
+   
+
+.ch {
+    width: 70%;
+}
+
+
+.ab {
+    float:right;
+    width: 50%;
+    height: 70px;
+    position: relative;
+    clear: both;
+    margin-top: -100px;
+    
+    
+}
+#DD {
+    float:right;
+    width: 100%;
+   position: relative;
+    clear: both;
+    margin-left: 0px;
+    
+}
+#ii {
+    float: left;
+    height: 350px;
+    clear: both;
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.ShowList{
+    float: left;
+    clear: both;
+    margin-top: 140px;
+    height: 55px;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    height: 45px;
+}
+
+
+li {
+    float: left;
+    display: block;
+    color: black;
+    padding: 16px;
+    text-align: left;
+    text-decoration: none;
+}
+
+#QQ{
+    
+    margin-top: 200px;
+    padding-top: px;
+    height: 60px;
+    width: 100%;
+    
+}
+
+
+#format{
+    height: 30px;
+    width: 80px;
+    line-height: 25px;
+    background-color:deepskyblue;
+}
+#btt {
+    height: 30px;
+    width: 80px;
+    font-size:15px;
+    background-color: deepskyblue;
+    
+}
+
+#form{
+    height: 40px;
+    width: 350px;
+    padding:10px;
+    position: relative;
+}
+
+#ee{
+height: 500px;  
+   
+    
+    
+}
+
+#gg {
+    width: 300px;
+    height: 20px;
+    float: left;
+    position: relative;
+    
+}
+
+#demo3 {
+    float:right;
+    position: relative;
+    clear: left;
+    display: block;
+ 
+}
+
+#demo4 {
+    
+    float:right;
+    position: relative;
+    clear:left;
+    display: block;
+    
+}
+
+#demo5{
+   
+    float: right;
+    position: relative;
+    clear: left;
+    display: block;
+  
+    
+}
+#demo6{
+  display: block;
+    width: 100%;
+
+}
+
+#map{
+    float: left;
+    width:100%;
+    height:450px;
+    position: relative;
+    clear: both;
+    display: inline-block;
+    margin-top: 550px;
+    margin-bottom: 50px;
+    overflow:hidden;
+}
+
+/*from www.embedgooglemaps.com*/
+#gmap_canvas{
+    height: 450px;
+    width:100%;
+}
+#gmap_canvas img{
+    max-width:none!important;background:none!important
+}

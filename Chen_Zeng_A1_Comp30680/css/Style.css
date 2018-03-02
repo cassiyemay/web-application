@@ -1,0 +1,402 @@
+/* Global style */
+
+body {
+    background: url("sanya.png");
+	background-color: #fff;
+	color: #777;
+	font: normal 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;   /*fromgoogleglobalstyleweb*/
+}
+
+p {
+	line-height: 25px;
+	margin-bottom: 20px;
+    text-indent: 40px;
+    position: relative;
+    
+}
+
+h {
+    font-family: 'Crete Round', serif;
+    font-size: 30px;
+    color: #444;
+    margin-top: 200px;
+    margin-left: -10px;
+   
+    text-align: center;
+    float: left
+}
+h1 {
+	font-family: 'Crete Round', serif;
+	font-weight: bold;
+	color: #444;
+	font-size: 50px;
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-weight: 100;
+	color: #444;
+	font-size: 20px;
+	: uppercase;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+
+h3 {
+	font-size: 25px;
+	color: black;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+}
+
+h4 {
+    font-size: 25px;
+	color: black;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 50px;
+}
+
+
+a {
+	text-decoration: none;
+	color: #444;
+}
+a: visited {
+      color: green;
+}
+a:active {
+    color: #fff;
+}
+a:hover {
+	color: #02b8dd;
+}
+
+strong {
+	font-weight: bold;
+}
+
+
+.clear {
+	clear: both;
+}
+
+.wrapper {
+	margin: 0 auto;
+	padding: 0 10px;
+	width: 940px;
+}
+
+/*headerstyle*/
+header {
+    height: 100px;
+}
+.color{
+    font-family: fantasy;
+    font-size: 45px;
+    color: deepskyblue;
+    font-style: oblique;
+}
+  header h1 {
+    float: left;
+    font-size: 35px;
+    color: dimgrey;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.ss {
+    float: left;
+}
+
+  header nav {
+    float: right;
+    background-color: deepskyblue;
+      margin-top: 35px;
+      
+    
+}
+
+  header nav ul li {
+    float: left;
+    display: inline-block;
+    margin-top: 0px;
+    list-style-type: none;
+      padding-top: 0px
+    
+}
+
+  header nav ul li a {
+    color: black;
+    font-size: 15px;
+    text-transform: uppercase;
+    display: block;
+    margin-right: 20px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/*article&tablestyle*/
+section {
+     float: left;
+    width: 45%;
+    height: 700px;
+    margin-left: o;
+    
+    
+}
+.aa{
+    
+    float: left;
+    text-align:justify;
+    margin-left: 0;
+
+}
+
+.bb{
+    margin-top: 30px;
+    width:inherit;
+    height: auto;
+    float: left;
+    
+    
+}
+
+/*picturesstyle*/
+.mm {
+    position: relative;
+    -webkit-animation: ck 2s infinite; 
+    animation: ck 2s infinite;
+    clear:both;
+   
+}
+
+@-webkit-keyframes ck {
+    0%   {left:0px; top:0px;}
+    25%  {left: 50px; top:0px;}
+    50%  {left:50px; top:100px;}
+    75%  {left:0px; top:100px;}
+    100% {left:0px; top:0px;}
+    
+@keyframes ck {
+    from {left: 0px;}
+    to {right: 35px;}
+}
+}
+
+.nn {
+    position:relative;
+    -webkit-animation: example 4s infinite reverse; 
+    animation-name: example 4s infinite reverse ease;
+    
+}
+
+@-webkit-keyframes example {
+    0%   {left:0px; top:0px;} /*fromw3school*/
+    25%  {left: 50px; top:0px;} /*fromw3school*/
+    50%  {left:50px; top:200px;} /*fromw3school*/
+    75%  {left:0px; top:200px;} /*fromw3school*/
+    100% {left:0px; top:0px;} /*fromw3school*/
+}
+
+@keyframes example {
+    0%   {left:0px; top:0px;} /*fromw3school*/
+    25%  {left:40px; top:0px;} /*fromw3school*/
+    50%  {left:40px; top:200px;} /*fromw3school*/
+    75%  {left:0px; top:200px;} /*fromw3school*/
+    100% {left:0px; top:0px;} /*fromw3school*/
+}
+
+/*tablestyle*/
+table {
+    float: right;
+    margin-right: -30px;
+    margin-top: 10px;
+    clear: right;
+    overflow: auto;
+    width: 55%;
+    height: 170px;
+    
+}
+
+th, td {
+    border-collapse: collapse;
+    vertical-align: middle;
+    text-transform: capitalize;
+    color: black;
+    border: 2px solid black;
+    height: 50px;
+    
+}
+
+th {
+    background-color: deepskyblue;
+    align-content: left;
+    vertical-align: middle;
+}
+
+.tt {
+    background-color: deepskyblue;
+    text-align: center;
+    margin-right: 170px;
+    float: right;
+    
+}
+
+/*footerstyle*/
+footer {
+     padding: 1px;
+    color: black;
+    background-color: white;
+    clear: both;
+    text-align: center;
+    margin-right: -10px;
+    height: 80px;
+    width: 90%;
+    margin-left: 45px;
+    padding-top: 80px;
+}
+
+.vv {
+    float: left;
+    margin-bottom: 15px;
+    height: 25px;
+}
+
+.oo {
+    float: right;
+    width: 15%;
+    font-size: 15px;
+}
+
+#ff {
+    float: right;
+    color:black;
+    text-align: left;
+    padding-bottom:  1px;
+    margin-left: 5px;
+    line-height: 20px;
+}
+
+     /*contactstyle*/       
+ form {
+    float: left;
+    width: 50%;
+    font-size: 15px;
+  display: block;
+     margin-top: 50px;
+     text-align: center;
+     margin-left: 200px
+
+}
+            
+ input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus{
+    border: 2px solid black;
+}
+            
+input[type=submit] {
+    width: 100%;
+    background-color: palevioletred;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+   p1 {
+    font-size: 30px;
+      padding-left: 400px;
+       
+       
+            }
+
+       /*imagesstyle*/     
+div.img {
+                height: 620px;
+                border: 2px solid #ddd;
+                background-color: aliceblue;
+                box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/*fromw3school*/
+                margin-left: 5px;
+                margin-right: 5px;
+                margin-top: 20px;
+                overflow: scroll;
+                padding: 0 10px;
+	            width: 800px;
+            }
+            
+            #float{
+              border-radius: 50%;
+            }
+            
+            .sanya {
+                width: 320px;
+                height: 350px;
+                border: 2px solid #ddd;
+                background-color: aliceblue;
+                box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                margin-left: 5px;
+            }
+            
+           div.img img {
+               border-radius: 50px;
+               width: 180px;
+               height: auto;
+             -webkit-filter: grayscale(40%)
+               cursor: pointer;
+               padding-left: 5px;
+            }
+            
+           div.img:hover {opacity: 0.4;}
+            
+            div.desc {
+                padding: 1px;
+                text-align:center;
+                
+            }
+
+ /*introductionstyle*/
+            
+            #intr{
+                width: 50%;;
+                height: 700px;
+                display: inline-block;
+                margin: 20px;
+                margin-top: 10px;
+                text-align: justify;
+            }
+            
+            #book{
+                float: right;
+                width: 25%;
+                margin-top: 100px;
+            
+            }
+
+/*skillstyle*/
+ol.a {
+                list-style-position: inside;
+                line-height: 35px;
+                color:black;
+                display: inline-block;
+               
+            }
+            
+            ol ul.a {
+                list-style-position: outside;
+                line-height: 35px;
+                color:black;
+                display: inline-block;
+            }
