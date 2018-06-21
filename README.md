@@ -7,7 +7,7 @@ Json PHP JavaScript
 ## Assignment2: 
 Creat a web app to display dublin 5 days weather infor by using JavaScript.
 
-![outcome for forecast in Dublin ](img-folder/forcast.gif)
+![outcome for forecast in Dublin ](img-folder/forecast.gif)
 
 ## Assignment3: 
 focuses on the use of PHP to manipulate data from MySQL databases.
