@@ -7,7 +7,7 @@
 ![outcome ](img-folder/personalweb.gif)
 
 ## Assignment2: 
-Creat a web app to display dublin 5 days weather infor by using JavaScript.
+Creat a web app to display dublin 5 days weather information by using JavaScript.
 
 ![outcome for forecast in Dublin ](img-folder/forecast.gif)
 
