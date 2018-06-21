@@ -1,5 +1,5 @@
 # web-application
-Json PHP JavaScript
+
 
 ## Assignment1: Create own website usign HTML5 and CSS:
 ![outcome ](img-folder/personalweb.gif)
